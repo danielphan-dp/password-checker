@@ -1,3 +1,7 @@
+def split_password(password, split_index):
+    return password[:split_index], password[split_index:]
+
+
 def pretty_print_data(api_data):
     h0 = 'Password'
     h1 = 'Hacked Count'
@@ -13,7 +17,3 @@ def pretty_print_data(api_data):
     fmt = '\t'.join('{{:{}}}'.format(x) for x in lens)
     table = [fmt.format(*row) for row in s]
     print('\n'.join(table))
-
-
-def split_password(password, split_index):
-    return password[:split_index], password[split_index:]
