@@ -2,10 +2,20 @@ import hashlib
 import requests
 import sys
 
+from utils import pretty_print_data, split_password
+
+BASE_URL = 'https://api.pwnedpasswords.com/range/'
+
 
 def request_pwned_api_data(query_char):
-    url = 'https://api.pwnedpasswords.com/range/' + str(query_char)
-    response = requests.get(url)
+    url = BASE_URL + str(query_char)
+
+    response = None
+    try:
+        response = requests.get(url)
+    except requests.exceptions.RequestException as e:  # This is the correct syntax
+        raise SystemExit(e)
+
     if response.status_code != 200:
         raise RuntimeError(f'Error fetching: {response.status_code}.')
     return response
@@ -17,10 +27,6 @@ def get_password_leaks_count(response, private_seq):
         if h == private_seq:
             return count
     return 0
-
-
-def split_password(password, split_index):
-    return password[:split_index], password[split_index:]
 
 
 def check_password(password):
@@ -35,23 +41,6 @@ def check_passwords_list(passwords_list):
     for password in passwords_list:
         result.append([password, check_password(password)])
     return result
-
-
-def pretty_print_data(api_data):
-    h0 = 'Password'
-    h1 = 'Hacked Count'
-    api_data_with_headers = [
-        ['-'*len(h0), '-'*len(h1)],
-        [h0, h1],
-        ['-'*len(h0), '-'*len(h1)]
-    ] + api_data + [
-        ['-'*len(h0), '-'*len(h1)]
-    ]
-    s = [[str(e) for e in row] for row in api_data_with_headers]
-    lens = [max(map(len, col)) for col in zip(*s)]
-    fmt = '\t'.join('{{:{}}}'.format(x) for x in lens)
-    table = [fmt.format(*row) for row in s]
-    print('\n'.join(table))
 
 
 def main(args):
