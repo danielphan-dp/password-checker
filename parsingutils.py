@@ -8,6 +8,6 @@ def split_password(password, split_index):
 def parse_response_to_dict(response):
     cache = defaultdict(lambda: 0)
     data_generator = (line.split(':') for line in response.text.splitlines())
-    for hash, hacked_count in data_generator:
-        cache[hash] = hacked_count
+    for _hash, hacked_count in data_generator:
+        cache[_hash] = hacked_count
     return cache
