@@ -10,9 +10,9 @@ Python program helping you securely evaluate a password (or a password list) in 
    2. For Windows 10/11: `py -m checkpassword <YOUR PASSWORD(S)>`
 3. The program will automatically print out a table of analyzed information of the passwords.   
 
-<image src='common-passwords.pdf' />
-
 **Example**
+
+<image src='common-passwords.png' />
 
 Analysis of 200 most commonly used password according to NordPass.
 
