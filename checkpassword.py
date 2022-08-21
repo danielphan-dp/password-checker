@@ -1,7 +1,7 @@
 import sys, requests, hashlib
 from cgitb import lookup
-# from displayutils import pretty_print_data
-# from parsingutils import split_password, parse_response_to_dict
+from displayutils import pretty_print_data
+from parsingutils import split_password, parse_response_to_dict
 
 
 BASE_URL = 'https://api.pwnedpasswords.com/range/'
