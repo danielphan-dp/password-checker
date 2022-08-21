@@ -12,9 +12,9 @@ Python program helping you securely evaluate a password (or a password list) in 
 
 **Example**
 
-<image src='common-passwords.png' />
+Analysis of 200 most commonly used passwords (using data from 2020) according to NordPass.
 
-Analysis of 200 most commonly used password according to NordPass.
+<image src='common-passwords.png' />
 
 ````
 --------        ------------
