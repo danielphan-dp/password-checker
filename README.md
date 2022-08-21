@@ -1,6 +1,6 @@
 ### Password Checker
 
-Python program helping you the security of a password (or a password list in one single command).
+Python program helping you securely evaluate a password (or a password list) in one single command.
 
 **Instructions**
 
@@ -8,7 +8,7 @@ Python program helping you the security of a password (or a password list in one
 2. Run the program.
    1. For macOS or Linux: `.\checkpassword <YOUR PASSWORD(S)>`
    2. For Windows 10/11: `py -m checkpassword <YOUR PASSWORD(S)>`
-3. The program will automatically print out a table analyzed information of the passwords.   
+3. The program will automatically print out a table of analyzed information of the passwords.   
 
 **Example**
 
