@@ -9,6 +9,7 @@ Python program helping you securely evaluate a password (or a password list) in 
    1. For macOS or Linux: `.\checkpassword <YOUR PASSWORD(S)>`
    2. For Windows 10/11: `py -m checkpassword <YOUR PASSWORD(S)>`
 3. The program will automatically print out a table of analyzed information of the passwords.   
+4. (Optional) Check out walk through JPYNB: [https://nbviewer.org/github/danielphan-dp/password-checker/blob/main/walk-through.ipynb](https://nbviewer.org/github/danielphan-dp/password-checker/blob/main/walk-through.ipynb)
 
 **Example**
 
